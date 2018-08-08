@@ -1,0 +1,208 @@
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    transition: margin-left .28s;
+    margin-left: 230px;
+    @media all and (max-width: 1440px) { 
+      margin-left: 180px;
+    }
+    position: relative;
+    padding-top: 50px;
+    background: #edf1f5;
+  }
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.28s;
+    width: 230px !important;
+    @media all and (max-width: 1440px) {
+      width: 180px !important;
+    }
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    //reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .scrollbar-wrapper {
+      overflow-x: hidden!important;
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
+    .is-horizontal {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .svg-icon {
+      margin-right: 30px;
+    }
+    .close-svg{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3D(-50%,-50%,0);
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+      & .el-menu-item{
+        font-size: 14px;
+        // font-weight: bolder;
+        height: 40px;
+        line-height: 40px;
+        span{
+          // font-weight: bold;
+        }
+      }
+
+      & .submenu-title-noDropdown{
+        height: 60px;
+        line-height: 60px;
+      }
+      & i{
+        color: #fff;
+        font-size: 14px;
+      }
+      & .el-icon-arrow-down:before {
+        content: '\E60B';
+      }
+      & .submenu-title-noDropdown.is-active {
+        border-left: 4px solid #5088E5;
+        background-color: @menuActive !important;
+        padding-left: 14px !important;
+        // opacity: 0.3;
+      }
+      & .el-submenu__title {
+        line-height: 60px;
+        height: 60px;
+        &>span{
+          // font-weight: bold;
+          font-size: 14px;
+        }
+      }
+      .el-menu--inline{
+        span{
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .hideSidebar {
+    .sidebar-container {
+      width: 60px !important;
+    }
+    .main-container {
+      margin-left: 60px;
+    }
+    .navbar{
+      padding-left: 60px;
+    }
+    .submenu-title-noDropdown {
+      padding-left: 10px !important;
+      position: relative;
+      .el-tooltip {
+        padding: 0 10px !important;
+      }
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        padding-left: 10px !important;
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+        &>span{
+          // font-weight: bold;
+          font-size: 16px;
+        }
+        .el-menu-item{
+          line-height: 40px !important;
+          height: 40px !important;
+        }
+      }
+    }
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width: 230px !important;
+    @media all and (max-width: 1440px) {
+      min-width: 180px !important;
+    }
+    background-color: @subMenuBg !important;
+    text-align: center;
+    &:hover {
+      background-color: @menuHover !important;
+    }
+    &.is-active {
+      border-left: 4px solid #5088E5;
+      padding-left: 36px !important;
+      // background-color: @menuHover !important;
+      background-color: @menuActive !important;
+    }
+  }
+
+
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: 230px !important;
+    @media all and (max-width: 1440px) {
+      min-width: 180px !important;
+    }
+  }
+
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      transition: transform .28s;
+      width: 230px !important;
+      @media all and (max-width: 1440px) {
+        width: 180px !important;
+      }
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-230px, 0, 0);
+        @media all and (max-width: 1440px) {
+          transform: translate3d(-180px, 0, 0);
+        }
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
