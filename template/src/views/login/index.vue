@@ -57,7 +57,8 @@ export default {
         return;
       }
       _this.loading = true;
-
+      _this.$store.commit("SET_TOKEN", 'test');
+      _this.$router.push("/home");
       _this.$ajax
         .login(_this.form)
         .then(res => {

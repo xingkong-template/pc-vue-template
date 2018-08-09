@@ -30,6 +30,7 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "clipboard": "^2.0.1",
+    "element-ui": "^2.4.4",
     "ip": "^1.1.5",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
