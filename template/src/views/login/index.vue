@@ -13,7 +13,7 @@
                     <span>用户登录</span>
                     <div class="user-form-error" v-if="error">
                         <span class="iconfont icon-jingshiicon"></span>
-                        <span>{{error}}</span>
+                        <span>/{{error}}</span>
                     </div>
                 </div>
                 <el-form-item prop="username">
