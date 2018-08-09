@@ -1,6 +1,5 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
-    aaa
     <div class="right-menu">
       <el-dropdown class="avatar-container right-menu-item" :show-timeout="100">
         <div class="avatar-wrapper">
