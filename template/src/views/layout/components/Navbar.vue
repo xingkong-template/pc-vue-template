@@ -3,7 +3,7 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container right-menu-item" :show-timeout="100">
         <div class="avatar-wrapper">
-          <span>/{{name}}</span>
+          <span>\{{name}}</span>
           <i class="el-icon-arrow-down el-icon--right"></i>
         </div>
         <el-dropdown-menu slot="dropdown">

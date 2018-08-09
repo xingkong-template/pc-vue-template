@@ -13,7 +13,7 @@
                     <span>找回密码</span>
                     <div class="user-form-error" v-if="error">
                         <span class="iconfont icon-jingshiicon"></span>
-                        <span>/{{error}}</span>
+                        <span>\{{error}}</span>
                     </div>
                 </div>
                 <el-form-item prop="userName">
@@ -31,10 +31,10 @@
                     <div class="sms-code clearfix">
                         <input type="text" v-model="form.smsCode" placeholder="请输入验证码">
                         <div class="sms-code-text" @click="sendCode" v-if="smsFlag" >
-                            /{{smsText}}
+                            \{{smsText}}
                         </div>
                         <div class="sms-code-text disabled" v-else>
-                            /{{timeCode}}s
+                            \{{timeCode}}s
                         </div>
                     </div>
                 </el-form-item>
@@ -53,7 +53,7 @@
                     <span>密码重置</span>
                     <div class="user-form-error" v-if="errorpw">
                         <span class="iconfont icon-jingshiicon"></span>
-                        <span>/{{errorpw}}</span>
+                        <span>\{{errorpw}}</span>
                     </div>
                 </div>
                 <el-form-item prop="password">
